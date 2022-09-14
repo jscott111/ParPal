@@ -1,11 +1,9 @@
 import React from "react";
-import { Text } from "react-native";
+import { Button } from "@ui-kitten/components";
 
 const Home = () => {
     return(
-        <Text>
-            Hello
-        </Text>
+        <Button>Primary Button</Button>
     )
 }
 
