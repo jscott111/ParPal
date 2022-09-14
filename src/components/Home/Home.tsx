@@ -1,9 +1,9 @@
 import React from "react";
-import { Button } from "@ui-kitten/components";
+import ScoresList from "components/ScoresList/ScoresList";
 
 const Home = () => {
     return(
-        <Button>Primary Button</Button>
+        <ScoresList></ScoresList>
     )
 }
 
