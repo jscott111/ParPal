@@ -1,6 +1,7 @@
 import React from "react";
-import { Divider, ListItem, Text } from "@ui-kitten/components";
+import { Card, Divider, ListItem, Text } from "@ui-kitten/components";
 import { List } from "@ui-kitten/components";
+import { default as theme } from "root/styles/theme/theme.json"
 
 const scoringData: IRound[] = [
     {
@@ -32,15 +33,76 @@ const scoringData: IRound[] = [
         date: "2022-06-12",
         score: 63,
         holes: 9
+    },
+    {
+        course: "Par 3-Country Meadows Golf Club",
+        date: "2022-06-12",
+        score: 42,
+        holes: 9
+    },
+    {
+        course: "Mountain Woods Golf Course",
+        date: "2022-06-12",
+        score: 61,
+        holes: 9
+    },
+    {
+        course: "Hillsborough Golf Club",
+        date: "2022-06-12",
+        score: 67,
+        holes: 9
+    },
+    {
+        course: "Par 3-Country Meadows Golf Club",
+        date: "2022-06-12",
+        score: 48,
+        holes: 9
+    },
+    {
+        course: "Par 3-Country Meadows Golf Club",
+        date: "2022-06-12",
+        score: 46,
+        holes: 9
+    },
+    {
+        course: "Bighorn Golf Club",
+        date: "2022-06-12",
+        score: 116,
+        holes: 18
+    },
+    {
+        course: "Hillsborough Golf Club",
+        date: "2022-06-12",
+        score: 116,
+        holes: 18
+    },
+    {
+        course: "Stonehurst Golf Club",
+        date: "2022-06-12",
+        score: 129,
+        holes: 18
+    },
+    {
+        course: "Stonehurst Golf Club",
+        date: "2022-06-12",
+        score: 96,
+        holes: 18
     }
 ]
 
 const renderItem = ({item, index}: {item: IRound, index: number}) => (
     <ListItem
         style={{width: "100%"}}
-        title={`${item.course}`}
-        description={`${item.date}`}
-        accessoryRight={<Text>{item.score}</Text>}
+        title={evaProps => <Text {...evaProps} style={{fontSize: 20, marginTop: 10, marginBottom: 8}}>{item.course}</Text>}
+        description={evaProps => <Text {...evaProps} style={{fontSize: 15, color: theme.SUBTEXT_COLOR, marginTop: 8, marginBottom: 8}}>{item.date}</Text>}
+        accessoryRight={
+            <Card
+                style={{maxHeight: "90%", padding: "90%", borderColor: theme.SUBTEXT_COLOR}}
+                footer={
+                    <Text>{item.score}</Text>
+                }
+            />
+        }
         touchSoundDisabled={true}
     />
 );
@@ -48,10 +110,11 @@ const renderItem = ({item, index}: {item: IRound, index: number}) => (
 const ScoresList = () => {
     return(
         <List
-            style={{width: "100%"}}
+            style={{width: "100%", maxHeight: "90%"}}
             data={scoringData}
             renderItem={renderItem}
             ItemSeparatorComponent={Divider}
+            
         />
     )
 }

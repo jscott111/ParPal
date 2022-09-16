@@ -7,7 +7,10 @@ import { default as theme } from "root/styles/theme/theme.json"
 
 export default function App(){
     return(
-        <ApplicationProvider {...eva} theme={{...eva.dark, ...theme }}>
+        <ApplicationProvider 
+            {...eva} 
+            theme={{...eva.dark, ...theme }}
+        >
             <Layout style={{ height: Dimensions.get('screen').height, width: Dimensions.get('screen').width, display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Home></Home>
             </Layout>
