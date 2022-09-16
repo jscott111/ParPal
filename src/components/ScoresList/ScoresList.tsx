@@ -95,13 +95,22 @@ const renderItem = ({item, index}: {item: IRound, index: number}) => (
         style={{width: "100%"}}
         title={evaProps => <Text {...evaProps} style={{fontSize: 20, marginTop: 10, marginBottom: 8}}>{item.course}</Text>}
         description={evaProps => <Text {...evaProps} style={{fontSize: 15, color: theme.SUBTEXT_COLOR, marginTop: 8, marginBottom: 8}}>{item.date}</Text>}
-        accessoryRight={
-            <Card
-                style={{maxHeight: "90%", padding: "90%", borderColor: theme.SUBTEXT_COLOR}}
-                footer={
-                    <Text>{item.score}</Text>
-                }
-            />
+        accessoryRight={() =>
+            <Text 
+                style={{
+                    color: theme.SUBTEXT_COLOR,
+                    borderWidth: 3,
+                    borderColor: theme.SCORE_BOX_OUTLINE,
+                    borderRadius: 6,
+                    height: 50,
+                    width: 50,
+                    textAlign: "center",
+                    textAlignVertical: "center",
+                    fontSize: 17
+                }}
+            >
+                {item.score}
+            </Text>
         }
         touchSoundDisabled={true}
     />
