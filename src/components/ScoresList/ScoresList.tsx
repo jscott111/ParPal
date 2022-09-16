@@ -1,7 +1,9 @@
 import React from "react";
-import { Card, Divider, ListItem, Text } from "@ui-kitten/components";
+import { Divider, ListItem, Text } from "@ui-kitten/components";
 import { List } from "@ui-kitten/components";
 import { default as theme } from "root/styles/theme/theme.json"
+import { StyleProp, TextStyle } from "react-native";
+import { courseNameStyle, roundDateStyle, scoreTextBoxStyle } from "root/styles/stylesheet";
 
 const scoringData: IRound[] = [
     {
@@ -93,22 +95,10 @@ const scoringData: IRound[] = [
 const renderItem = ({item, index}: {item: IRound, index: number}) => (
     <ListItem
         style={{width: "100%"}}
-        title={evaProps => <Text {...evaProps} style={{fontSize: 20, marginTop: 10, marginBottom: 8}}>{item.course}</Text>}
-        description={evaProps => <Text {...evaProps} style={{fontSize: 15, color: theme.SUBTEXT_COLOR, marginTop: 8, marginBottom: 8}}>{item.date}</Text>}
+        title={evaProps => <Text {...evaProps} style={courseNameStyle}>{item.course}</Text>}
+        description={evaProps => <Text {...evaProps} style={roundDateStyle}>{item.date}</Text>}
         accessoryRight={() =>
-            <Text 
-                style={{
-                    color: theme.SUBTEXT_COLOR,
-                    borderWidth: 3,
-                    borderColor: theme.SCORE_BOX_OUTLINE,
-                    borderRadius: 6,
-                    height: 50,
-                    width: 50,
-                    textAlign: "center",
-                    textAlignVertical: "center",
-                    fontSize: 17
-                }}
-            >
+            <Text style={scoreTextBoxStyle}>
                 {item.score}
             </Text>
         }
@@ -123,7 +113,6 @@ const ScoresList = () => {
             data={scoringData}
             renderItem={renderItem}
             ItemSeparatorComponent={Divider}
-            
         />
     )
 }
