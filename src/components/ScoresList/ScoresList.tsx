@@ -1,8 +1,6 @@
 import React from "react";
 import { Divider, ListItem, Text } from "@ui-kitten/components";
 import { List } from "@ui-kitten/components";
-import { default as theme } from "root/styles/theme/theme.json"
-import { StyleProp, TextStyle } from "react-native";
 import { courseNameStyle, roundDateStyle, scoreTextBoxStyle } from "root/styles/stylesheet";
 
 const scoringData: IRound[] = [

@@ -11,7 +11,15 @@ export default function App(){
             {...eva} 
             theme={{...eva.dark, ...theme }}
         >
-            <Layout style={{ height: Dimensions.get('screen').height, width: Dimensions.get('screen').width, display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <Layout 
+                style={{ 
+                    height: Dimensions.get('screen').height, 
+                    width: Dimensions.get('screen').width, 
+                    display: "flex", 
+                    justifyContent: "center", 
+                    alignItems: "center" 
+                }}
+            >
                 <Home></Home>
             </Layout>
         </ApplicationProvider>
