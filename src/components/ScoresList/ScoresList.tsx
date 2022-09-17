@@ -1,7 +1,13 @@
 import React from "react";
-import { Divider, ListItem, Text } from "@ui-kitten/components";
+import { Button, Divider, ListItem, Text } from "@ui-kitten/components";
 import { List } from "@ui-kitten/components";
-import { courseNameStyle, listStyle, roundDateStyle, scoreTextBoxStyle } from "root/styles/stylesheet";
+import { 
+    addButtonStyle, 
+    courseNameStyle, 
+    listStyle, 
+    roundDateStyle, 
+    scoreTextBoxStyle 
+} from "root/styles/stylesheet";
 
 const scoringData: IRound[] = [
     {
@@ -106,12 +112,19 @@ const renderItem = ({item, index}: {item: IRound, index: number}) => (
 
 const ScoresList = () => {
     return(
-        <List
-            style={listStyle}
-            data={scoringData}
-            renderItem={renderItem}
-            ItemSeparatorComponent={Divider}
-        />
+        <>
+            <Button
+                style={addButtonStyle}
+            >
+                Add Round
+            </Button>
+            <List
+                style={listStyle}
+                data={scoringData}
+                renderItem={renderItem}
+                ItemSeparatorComponent={Divider}
+            />
+        </>
     )
 }
 

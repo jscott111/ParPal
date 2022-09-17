@@ -30,3 +30,11 @@ export const listStyle: StyleProp<ViewStyle> = {
     width: "100%", 
     maxHeight: "90%"
 }
+
+export const addButtonStyle: StyleProp<ViewStyle> = {
+    borderRadius: 20,
+    width: "50%",
+    marginTop: "20%",
+    marginBottom: "5%",
+    position: "relative"
+}
