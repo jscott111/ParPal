@@ -1,4 +1,4 @@
-import { StyleProp, TextStyle } from "react-native"
+import { StyleProp, TextStyle, ViewStyle } from "react-native"
 import { default as theme } from "root/styles/theme/theme.json"
 
 export const scoreTextBoxStyle: StyleProp<TextStyle> = {
@@ -24,4 +24,9 @@ export const roundDateStyle: StyleProp<TextStyle> = {
     color: theme.SUBTEXT_COLOR, 
     marginTop: 8, 
     marginBottom: 8
+}
+
+export const listStyle: StyleProp<ViewStyle> = {
+    width: "100%", 
+    maxHeight: "90%"
 }
