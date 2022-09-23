@@ -28,7 +28,7 @@ export const roundDateStyle: StyleProp<TextStyle> = {
 
 export const listStyle: StyleProp<ViewStyle> = {
     width: "100%", 
-    maxHeight: "90%"
+    maxHeight: "75%"
 }
 
 export const addButtonStyle: StyleProp<ViewStyle> = {
