@@ -38,3 +38,7 @@ export const addButtonStyle: StyleProp<ViewStyle> = {
     marginBottom: "5%",
     position: "relative"
 }
+
+export const modalBackgroundStyle: StyleProp<ViewStyle> = {
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+}

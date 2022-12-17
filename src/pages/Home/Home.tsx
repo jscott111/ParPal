@@ -1,5 +1,5 @@
 import React from "react";
-import ScoresList from "root/src/pages/ScoresList/ScoresList";
+import ScoresList from "pages/ScoresList/ScoresList";
 
 const Home = () => {
     return(
