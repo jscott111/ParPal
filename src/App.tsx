@@ -1,5 +1,5 @@
 import React from "react";
-import Home from "components/Home/Home"
+import Home from "root/src/pages/Home/Home"
 import { Dimensions } from "react-native";
 import { ApplicationProvider, Layout } from "@ui-kitten/components";
 import * as eva from "@eva-design/eva"

@@ -1,13 +1,13 @@
 import React from "react";
-import { Button, Divider, ListItem, Text } from "@ui-kitten/components";
-import { List } from "@ui-kitten/components";
+import { Divider, ListItem, Text, List, Button } from "@ui-kitten/components";
 import { 
-    addButtonStyle, 
+    addButtonStyle,
     courseNameStyle, 
     listStyle, 
     roundDateStyle, 
     scoreTextBoxStyle 
 } from "root/styles/stylesheet";
+import AddScore from "pages/AddScore/AddScore";
 
 const scoringData: IRound[] = [
     {
@@ -111,13 +111,28 @@ const renderItem = ({item, index}: {item: IRound, index: number}) => (
 );
 
 const ScoresList = () => {
+    const [addScoreModalVisible, setAddScoreModalVisible] = React.useState(false)
+
+    const onCancel = () => {
+        setAddScoreModalVisible(false)
+    }
+    
+    const onAdd = () => {
+    
+    }
+
     return(
         <>
             <Button
                 style={addButtonStyle}
+                onPress={() => setAddScoreModalVisible(true)}
             >
-                Add Round
+                Add Score
             </Button>
+            <AddScore
+                visibility={addScoreModalVisible}
+                onCancel={onCancel}
+            />
             <List
                 style={listStyle}
                 data={scoringData}
