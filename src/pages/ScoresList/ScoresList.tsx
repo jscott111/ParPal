@@ -116,7 +116,12 @@ const renderItems = (rounds: IRound[]) => {
         <List.Item
             key={item.id}
         >
-            <Flex>
+            <Flex 
+                justify="between"
+                style={{
+                    justifyContent: "center"
+                }}
+            >
                 <Flex.Item>
                     <Text>{item.course}</Text>
                     <List.Item.Brief>
@@ -146,11 +151,17 @@ const ScoresList = () => {
 
     return(
         <>
-            <Button
-                style={addButtonStyle as StyleProp<ViewStyle>}
+            <Flex
+                style={{
+                    justifyContent: "center"
+                }}
             >
-                Add Score
-            </Button>
+                <Button
+                    style={addButtonStyle as StyleProp<ViewStyle>}
+                >
+                    Add Score
+                </Button>
+            </Flex>
             <List>
                 {renderItems(scoringData)}
             </List>
