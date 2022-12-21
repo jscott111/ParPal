@@ -2,10 +2,9 @@ import React from "react"
 import { StyleProp, Text, ViewStyle } from "react-native";
 import { 
     addButtonStyle,
-    courseNameStyle, 
-    listStyle, 
-    roundDateStyle, 
-    scoreTextBoxStyle 
+    courseNameStyle,
+    roundDateStyle,
+    scoreTextBoxStyle
 } from "root/styles/stylesheet";
 import AddScore from "pages/AddScore/AddScore";
 import { Button, Flex, List } from "@ant-design/react-native";
@@ -115,25 +114,22 @@ const renderItems = (rounds: IRound[]) => {
     return rounds.map((item) => (
         <List.Item
             key={item.id}
+            extra={
+                <Text style={scoreTextBoxStyle}>
+                    {item.score}
+                </Text>
+            }
         >
-            <Flex 
-                justify="between"
-                style={{
-                    justifyContent: "center"
-                }}
+            <Text
+                style={courseNameStyle}
             >
-                <Flex.Item>
-                    <Text>{item.course}</Text>
-                    <List.Item.Brief>
-                        {item.date}
-                    </List.Item.Brief>
-                </Flex.Item>
-                <Flex.Item>
-                    <Text style={scoreTextBoxStyle}>
-                        {item.score}
-                    </Text>
-                </Flex.Item>
-            </Flex>
+                {item.course}
+            </Text>
+            <List.Item.Brief
+                style={roundDateStyle}
+            >
+                {item.date}
+            </List.Item.Brief>
         </List.Item>
     ))
 }

@@ -28,11 +28,6 @@ export const roundDateStyle: StyleProp<TextStyle> = {
     marginBottom: 8
 }
 
-export const listStyle: CSSProperties = {
-    width: "100%", 
-    maxHeight: "90%"
-}
-
 export const addButtonStyle: CSSProperties = {
     borderRadius: 20,
     width: "50%",
