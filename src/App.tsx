@@ -1,4 +1,4 @@
-import React from "react-native"
+import React, { ScrollView } from "react-native"
 import Home from "root/src/pages/Home/Home"
 import { Dimensions } from "react-native";
 import { APP_THEME } from "root/styles/theme/theme.json"
@@ -16,14 +16,9 @@ export default function App(){
             }}
         >
             <Provider locale={enUS}>
-                <View
-                    style={{
-                        maxHeight: Dimensions.get('screen').height,
-                        maxWidth: Dimensions.get('screen').width
-                    }}
-                >
+                <ScrollView>
                     <Home></Home>
-                </View>
+                </ScrollView>
             </Provider>
         </ConfigProvider>
     )

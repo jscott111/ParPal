@@ -8,7 +8,7 @@ import {
     scoreTextBoxStyle 
 } from "root/styles/stylesheet";
 import AddScore from "pages/AddScore/AddScore";
-import { Button, List } from "@ant-design/react-native";
+import { Button, Flex, List } from "@ant-design/react-native";
 
 const scoringData: IRound[] = [
     {
@@ -116,13 +116,19 @@ const renderItems = (rounds: IRound[]) => {
         <List.Item
             key={item.id}
         >
-            {item.course}
-            <List.Item.Brief>
-                {item.date}
-            </List.Item.Brief>
-            <Text style={scoreTextBoxStyle}>
-                {item.score}
-            </Text>
+            <Flex>
+                <Flex.Item>
+                    <Text>{item.course}</Text>
+                    <List.Item.Brief>
+                        {item.date}
+                    </List.Item.Brief>
+                </Flex.Item>
+                <Flex.Item>
+                    <Text style={scoreTextBoxStyle}>
+                        {item.score}
+                    </Text>
+                </Flex.Item>
+            </Flex>
         </List.Item>
     ))
 }
