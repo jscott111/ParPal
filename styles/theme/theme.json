@@ -45,5 +45,6 @@
   "color-danger-700": "#920D13",
   "color-danger-800": "#760816",
   "color-danger-900": "#610418",
-  "SUBTEXT_COLOR": "#dcdcdc"
+  "SUBTEXT_COLOR": "#4f4d4d",
+  "APP_THEME": "4d6327"
 }

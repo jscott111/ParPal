@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react-native"
 import ScoresList from "pages/ScoresList/ScoresList";
 
 const Home = () => {

@@ -1,6 +1,6 @@
+import { Button, Card, Modal } from "antd"
 import React from "react"
 import { View } from "react-native"
-import { Button, Card, Modal, Text } from "@ui-kitten/components"
 import { modalBackgroundStyle } from "root/styles/stylesheet"
 
 const AddScore: React.FC<{
@@ -15,10 +15,9 @@ const AddScore: React.FC<{
         <View>
             <Modal
                 visible={visibility}
-                backdropStyle={modalBackgroundStyle}
                 style={{
                     width: "90%",
-                    height: "90%"
+                    height: "200px"
                 }}
             >
                 <Card
@@ -26,7 +25,7 @@ const AddScore: React.FC<{
                         <View>
                             <Button
                                 size="small"
-                                onPress={onCancel}
+                                onClick={onCancel}
                             >
                                 Cancel
                             </Button>
@@ -38,7 +37,7 @@ const AddScore: React.FC<{
                         </View>
                     )}
                 >
-                    <Text>Hello World</Text>
+                    <h4>Hello World</h4>
                 </Card>
             </Modal>
         </View>

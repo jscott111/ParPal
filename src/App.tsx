@@ -1,27 +1,30 @@
-import React from "react";
+import React from "react-native"
 import Home from "root/src/pages/Home/Home"
 import { Dimensions } from "react-native";
-import { ApplicationProvider, Layout } from "@ui-kitten/components";
-import * as eva from "@eva-design/eva"
-import { default as theme } from "root/styles/theme/theme.json"
+import { APP_THEME } from "root/styles/theme/theme.json"
+import { ConfigProvider } from "antd";
+import { Provider, View } from "@ant-design/react-native";
+import enUS from '@ant-design/react-native/lib/locale-provider/en_US';
 
 export default function App(){
     return(
-        <ApplicationProvider 
-            {...eva} 
-            theme={{...eva.dark, ...theme }}
+        <ConfigProvider
+            theme={{
+                token: {
+                    colorPrimary: APP_THEME
+                }    
+            }}
         >
-            <Layout 
-                style={{ 
-                    height: Dimensions.get('screen').height, 
-                    width: Dimensions.get('screen').width, 
-                    display: "flex", 
-                    justifyContent: "center", 
-                    alignItems: "center" 
-                }}
-            >
-                <Home></Home>
-            </Layout>
-        </ApplicationProvider>
+            <Provider locale={enUS}>
+                <View
+                    style={{
+                        maxHeight: Dimensions.get('screen').height,
+                        maxWidth: Dimensions.get('screen').width
+                    }}
+                >
+                    <Home></Home>
+                </View>
+            </Provider>
+        </ConfigProvider>
     )
 }

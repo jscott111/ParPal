@@ -1,3 +1,5 @@
+import { ButtonStyles } from "@ant-design/react-native/lib/button/style"
+import { CSSProperties } from "react"
 import { StyleProp, TextStyle, ViewStyle } from "react-native"
 import { default as theme } from "root/styles/theme/theme.json"
 
@@ -26,12 +28,12 @@ export const roundDateStyle: StyleProp<TextStyle> = {
     marginBottom: 8
 }
 
-export const listStyle: StyleProp<ViewStyle> = {
+export const listStyle: CSSProperties = {
     width: "100%", 
     maxHeight: "90%"
 }
 
-export const addButtonStyle: StyleProp<ViewStyle> = {
+export const addButtonStyle: CSSProperties = {
     borderRadius: 20,
     width: "50%",
     marginTop: "20%",
@@ -40,5 +42,5 @@ export const addButtonStyle: StyleProp<ViewStyle> = {
 }
 
 export const modalBackgroundStyle: StyleProp<ViewStyle> = {
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
 }
